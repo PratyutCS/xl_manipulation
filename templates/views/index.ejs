@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">My Website</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+        </ul>
+        <div class="burger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+    <section>
+    <div class="container">
+        <% for (var i = 0; i < list.length;  i++ ) { %>
+            <div class="cc">
+                <form method="post" action="/content">
+                    <input type="hidden" name="fileName" style = "display:none" value='<%= list[i] %>'>
+                    <button class = "lb" type="submit"><%= list[i] %></button>
+                </form>
+    
+                </form><form method="post" action="/delete">
+                    <input type="hidden" name="fileName" style = "display:none" value='<%= list[i] %>'>
+                    <button class = "lb" type="submit">delete : <%= list[i] %></button>
+                </form>
+    
+                </form><form method="post" action="/download">
+                    <input type="hidden" name="fileName" style = "display:none" value='<%= list[i] %>'>
+                    <button class = "lb" type="submit">download : <%= list[i] %></button>
+                </form>
+            </div>
+
+        <% } %>
+    </div>
+    <div class="btn">
+        <form method="post" action="/upload" enctype="multipart/form-data">
+            <input class="upload" type="file" name="file" maxlength="5000000" accept=".xlsx">
+            <br>
+            <button class="submitbtn" type="submit">Upload</button>
+        </form>
+    </div>
+</section>
+</body>
+</body>
+</html>
