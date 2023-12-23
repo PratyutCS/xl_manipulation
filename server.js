@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 let bodyparser=require('body-parser');
 let Express = require('express')
 
-let xltojson = require("C:/Users/praty/OneDrive/Desktop/xlsx/scripts/xltojson.js");
+let xltojson = require("./scripts/xltojson.js");
 
 const upload = multer({
   dest: 'uploads/xl/',
